@@ -6,7 +6,7 @@ const accountInfo = require("./account");
 let userPin = prompt("What is your pin number?" + " ");
 function validatePin(pin){
 while(accountInfo.pinNumber != pin){
-    pin = prompt("Incorrect pin number, try again.");   
+    pin = prompt("Incorrect pin number, try again." + " ");   
 }
 }
 validatePin(userPin);
@@ -16,18 +16,24 @@ function getBalance(){
 }
 getBalance();
 
-let take = prompt("How much would you like to withdraw today?" + " ");
+let take; 
+let userInput = prompt("Do you to withdraw, deposit, or exit?" + " ");
+if(userInput == "withdraw"){
+take = prompt("How much would you like to withdraw today?" + " ");
 function withdraw(){
     console.log("Withdrawing..." + " " + "New account balance:");
     console.log(accountInfo.balance - take);  
+    console.log("Thank you for using Ibrahim Bank." + " " + "Please remove card." + " " + "Have a great day!");
 }
 withdraw();
-
-
-let putBack = prompt("How much would you like to deposit today?" + " ");
+}
+else if(userInput == "deposit"){
+    let putBack = prompt("How much would you like to deposit today?" + " ");
 function deposit(){
     console.log("Depositing..." + " " + "New account balance:");
     console.log(accountInfo.balance + putBack);
+    console.log("Thank you for using Ibrahim Bank." + " " + "Please remove card." + " " + "Have a great day!");
 }
 deposit();
-
+}
+else console.log("Thank you for using Ibrahim Bank." + " " + "Please remove card." + " " + "Have a great day!");
