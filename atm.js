@@ -16,24 +16,37 @@ function getBalance(){
 }
 getBalance();
 
-let take; 
-let userInput = prompt("Do you to withdraw, deposit, or exit?" + " ");
-if(userInput == "withdraw"){
-take = prompt("How much would you like to withdraw today?" + " ");
+let take;
+let userInput = prompt("Do you want withdraw, deposit, or exit" + " ");
 function withdraw(){
+if(userInput == "withdraw"){
+    take = prompt("How much would you like to withdraw today?" + " ")
     console.log("Withdrawing..." + " " + "New account balance:");
     console.log(accountInfo.balance - take);  
     console.log("Thank you for using Ibrahim Bank." + " " + "Please remove card." + " " + "Have a great day!");
+    }
 }
-withdraw();
-}
-else if(userInput == "deposit"){
-    let putBack = prompt("How much would you like to deposit today?" + " ");
+    withdraw();
+
+let putBack;
 function deposit(){
+if(userInput == "deposit"){
+    putBack = prompt("How much would you like to deposit today?" + " ");
     console.log("Depositing..." + " " + "New account balance:");
     console.log(accountInfo.balance + putBack);
     console.log("Thank you for using Ibrahim Bank." + " " + "Please remove card." + " " + "Have a great day!");
+    }
 }
 deposit();
+
+if(userInput == "exit"){
+    (console.log("Thank you for using Ibrahim Bank." + " " + "Please remove card." + " " + "Have a great day!"));
 }
-else console.log("Thank you for using Ibrahim Bank." + " " + "Please remove card." + " " + "Have a great day!");
+
+ module.exports = {
+  validatePin,
+  getBalance,
+  withdraw,
+  deposit
+}
+//console.log(module.exports);
