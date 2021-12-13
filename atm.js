@@ -6,8 +6,8 @@ const accountInfo = require("./account");
 let userPin = prompt("What is your pin number?" + " ");
 function validatePin(pin){
 while(accountInfo.pinNumber != pin){
-    pin = prompt("Incorrect pin number, try again." + " ");   
-}
+        pin = prompt("Incorrect pin number, try again." + " ");   
+    }
 }
 validatePin(userPin);
 
@@ -17,7 +17,7 @@ function getBalance(){
 getBalance();
 
 let take;
-let userInput = prompt("Do you want withdraw, deposit, or exit" + " ");
+let userInput = prompt("Do you want to withdraw, deposit, or exit?" + " ");
 function withdraw(){
 if(userInput == "withdraw"){
     take = prompt("How much would you like to withdraw today?" + " ")
@@ -42,7 +42,7 @@ deposit();
 if(userInput == "exit"){
     (console.log("Thank you for using Ibrahim Bank." + " " + "Please remove card." + " " + "Have a great day!"));
 }
-
+   
  module.exports = {
   validatePin,
   getBalance,
